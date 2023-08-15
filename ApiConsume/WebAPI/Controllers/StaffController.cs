@@ -34,8 +34,9 @@ namespace WebAPI.Controllers
             return Ok();
         }
         [HttpDelete]
-        public IActionResult DeleteStaff(Staff staff)
+        public IActionResult DeleteStaff(int id)
         {
+            var staff = _staffService.GetById(id);
             _staffService.Delete(staff);
             return Ok();
         }
