@@ -1,4 +1,4 @@
-﻿namespace WebUI.Models.ViewModels
+﻿namespace WebUI.Models.ViewModels.Staff
 {
     public class StaffViewModel
     {
