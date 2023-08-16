@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Abstract;
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
@@ -6,29 +8,41 @@ namespace WebAPI.Controllers
     [ApiController]
     public class RoomController : ControllerBase
     {
+        private readonly IRoomService _roomService;
+        public RoomController(IRoomService roomService)
+        {
+            _roomService = roomService;
+        }
+
         [HttpGet]
         public IActionResult RoomList()
         {
-            return Ok();
+            var values = _roomService.GetAll();
+            return Ok(values);
         }
         [HttpGet("{id}")]
-        public IActionResult GetRoom()
+        public IActionResult GetRoom(int id)
         {
-            return Ok();
+            var value = _roomService.GetById(id);
+            return Ok(value);
         }
         [HttpPost]
-        public IActionResult AddRoom()
+        public IActionResult AddRoom(Room room)
         {
+            _roomService.Add(room);
             return Ok();
         }
         [HttpDelete]
-        public IActionResult DeleteRoom()
+        public IActionResult DeleteRoom(int id)
         {
+            var room = _roomService.GetById(id);
+            _roomService.Delete(room);
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateRoom()
+        public IActionResult UpdateStaff(Room room)
         {
+            _roomService.Update(room);
             return Ok();
         }
     }

@@ -9,7 +9,6 @@ namespace WebAPI.Controllers
     public class StaffController : ControllerBase
     {
         private readonly IStaffService _staffService;
-
         public StaffController(IStaffService staffService)
         {
             _staffService = staffService;
