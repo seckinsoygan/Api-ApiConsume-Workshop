@@ -32,7 +32,7 @@ namespace WebAPI.Controllers
             _TestimonialService.Add(Testimonial);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteTestimonial(int id)
         {
             var Testimonial = _TestimonialService.GetById(id);
