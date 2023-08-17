@@ -19,9 +19,9 @@
             <th>@item.StaffId</th>
             <td>@item.Name</td>
             <td>@item.Title</td>
-            <td><a href="#" class="btn btn-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="#" class="btn btn-info">Detaylar</a></td>
+            <td><a href="/Staff/DeleteStaff/@item.StaffId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Staff/UpdateStaff/@item.StaffId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Staff/@item.StaffId" class="btn btn-info">Detaylar</a></td>
         </tr>
     }
 </table>
