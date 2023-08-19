@@ -1,4 +1,6 @@
-﻿using BusinessLayer.Abstract;
+﻿using AutoMapper;
+using BusinessLayer.Abstract;
+using DtoLayer.Dtos.RoomDto;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,9 +11,11 @@ namespace WebAPI.Controllers
     public class RoomController : ControllerBase
     {
         private readonly IRoomService _roomService;
-        public RoomController(IRoomService roomService)
+        private readonly IMapper _mapper;
+        public RoomController(IRoomService roomService, IMapper mapper)
         {
             _roomService = roomService;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -27,9 +31,14 @@ namespace WebAPI.Controllers
             return Ok(value);
         }
         [HttpPost]
-        public IActionResult AddRoom(Room room)
+        public IActionResult AddRoom(RoomAddDto roomAddDto)
         {
-            _roomService.Add(room);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var values = _mapper.Map<Room>(roomAddDto);
+            _roomService.Add(values);
             return Ok();
         }
         [HttpDelete]
@@ -40,9 +49,14 @@ namespace WebAPI.Controllers
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateStaff(Room room)
+        public IActionResult UpdateStaff(RoomUpdateDto roomUpdateDto)
         {
-            _roomService.Update(room);
+            if (!ModelState.IsValid)
+            {
+                BadRequest();
+            }
+            var values = _mapper.Map<Room>(roomUpdateDto);
+            _roomService.Update(values);
             return Ok();
         }
     }
