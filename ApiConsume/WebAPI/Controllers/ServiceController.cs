@@ -32,7 +32,7 @@ namespace WebAPI.Controllers
             _ServiceService.Add(Service);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteService(int id)
         {
             var Service = _ServiceService.GetById(id);
