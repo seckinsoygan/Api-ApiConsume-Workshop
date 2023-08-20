@@ -9,17 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{3D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDoList", "ToDoList", "{A27D5573-AC6E-490C-9326-4F9066444CE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "ApiConsume\WebAPI\WebAPI.csproj", "{65A87836-ECDE-412B-80DD-4F9ED92DB667}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "ApiConsume\WebAPI\WebAPI.csproj", "{65A87836-ECDE-412B-80DD-4F9ED92DB667}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "ApiConsume\DataAccessLayer\DataAccessLayer.csproj", "{D0D09C9A-3B9E-4522-A5A9-A026B2AE5A23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "ApiConsume\DataAccessLayer\DataAccessLayer.csproj", "{D0D09C9A-3B9E-4522-A5A9-A026B2AE5A23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "ApiConsume\BusinessLayer\BusinessLayer.csproj", "{495264BA-6E1F-4CD0-83A6-952EED2703C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "ApiConsume\BusinessLayer\BusinessLayer.csproj", "{495264BA-6E1F-4CD0-83A6-952EED2703C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DtoLayer", "ApiConsume\DtoLayer\DtoLayer.csproj", "{3A1EF819-7AA5-47AF-AB1B-105B4DDBF312}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DtoLayer", "ApiConsume\DtoLayer\DtoLayer.csproj", "{3A1EF819-7AA5-47AF-AB1B-105B4DDBF312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "Frontend\WebUI\WebUI.csproj", "{00319508-696A-4D83-947F-5477A4CA8BF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebUI", "Frontend\WebUI\WebUI.csproj", "{00319508-696A-4D83-947F-5477A4CA8BF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityLayer", "ApiConsume\EntityLayer\EntityLayer.csproj", "{2DEFB915-5F2C-4DBD-A4CC-43C6A9F1959C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityLayer", "ApiConsume\EntityLayer\EntityLayer.csproj", "{2DEFB915-5F2C-4DBD-A4CC-43C6A9F1959C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
