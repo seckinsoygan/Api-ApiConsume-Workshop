@@ -4,6 +4,7 @@ using WebUI.Dtos.AboutDto;
 using WebUI.Dtos.IdentityDto.LoginDto;
 using WebUI.Dtos.IdentityDto.RegisterDto;
 using WebUI.Dtos.ServiceDto;
+using WebUI.Dtos.SubscribeDto;
 
 namespace WebUI.Mapping
 {
@@ -20,6 +21,8 @@ namespace WebUI.Mapping
 
             CreateMap<ResultAboutDto, About>().ReverseMap();
             CreateMap<UpdateAboutDto, About>().ReverseMap();
+
+            CreateMap<CreateSubscribeDto, Subscribe>().ReverseMap();
         }
     }
 }
