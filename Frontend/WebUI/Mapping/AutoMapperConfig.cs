@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EntityLayer.Concrete;
 using WebUI.Dtos.AboutDto;
+using WebUI.Dtos.BookingDto;
 using WebUI.Dtos.IdentityDto.LoginDto;
 using WebUI.Dtos.IdentityDto.RegisterDto;
 using WebUI.Dtos.ServiceDto;
@@ -23,6 +24,8 @@ namespace WebUI.Mapping
             CreateMap<UpdateAboutDto, About>().ReverseMap();
 
             CreateMap<CreateSubscribeDto, Subscribe>().ReverseMap();
+
+            CreateMap<CreateBookingDto, Booking>().ReverseMap();
         }
     }
 }
