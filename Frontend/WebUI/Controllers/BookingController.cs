@@ -28,11 +28,13 @@ namespace WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddBooking(CreateBookingDto dto)
         {
+            dto.Status = "Onay Bekliyor.";
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(dto);
             StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PostAsync("http://localhost:5126/api/Booking", content);
             return RedirectToAction("Index");
         }
+
     }
 }

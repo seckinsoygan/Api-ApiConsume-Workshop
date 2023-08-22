@@ -8,41 +8,41 @@ namespace WebAPI.Controllers
     [ApiController]
     public class BookingController : ControllerBase
     {
-        private readonly IBookingService _BookingService;
-        public BookingController(IBookingService BookingService)
+        private readonly IBookingService _bookingService;
+        public BookingController(IBookingService bookingService)
         {
-            _BookingService = BookingService;
+            _bookingService = bookingService;
         }
 
         [HttpGet]
         public IActionResult BookingList()
         {
-            var values = _BookingService.GetAll();
+            var values = _bookingService.GetAll();
             return Ok(values);
         }
         [HttpGet("{id}")]
         public IActionResult GetBooking(int id)
         {
-            var value = _BookingService.GetById(id);
+            var value = _bookingService.GetById(id);
             return Ok(value);
         }
         [HttpPost]
         public IActionResult AddBooking(Booking Booking)
         {
-            _BookingService.Add(Booking);
+            _bookingService.Add(Booking);
             return Ok();
         }
         [HttpDelete("{id}")]
         public IActionResult DeleteBooking(int id)
         {
-            var Booking = _BookingService.GetById(id);
-            _BookingService.Delete(Booking);
+            var Booking = _bookingService.GetById(id);
+            _bookingService.Delete(Booking);
             return Ok();
         }
         [HttpPut]
         public IActionResult UpdateBooking(Booking Booking)
         {
-            _BookingService.Update(Booking);
+            _bookingService.Update(Booking);
             return Ok();
         }
     }

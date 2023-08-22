@@ -12,12 +12,10 @@ namespace WebUI.Controllers
         {
             return PartialView();
         }
-
         public PartialViewResult PreLoaderPartial()
         {
             return PartialView();
         }
-
         public PartialViewResult NavHeaderPartial()
         {
             return PartialView();
