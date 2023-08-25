@@ -37,14 +37,17 @@ builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 builder.Services.AddScoped<IAboutService, AboutManager>();
 builder.Services.AddScoped<IAboutDal, EfAboutDal>();
 
+builder.Services.AddScoped<IContactService, ContactManager>();
+builder.Services.AddScoped<IContactDal, EfContactDal>();
+
 builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
 
 builder.Services.AddCors(opt =>
 {
-	opt.AddPolicy("OtelApiCors", opts =>
-	{
-		opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-	});
+    opt.AddPolicy("OtelApiCors", opts =>
+    {
+        opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
 });
 
 var app = builder.Build();
@@ -52,8 +55,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-	app.UseSwagger();
-	app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 app.UseCors("OtelApiCors");
 app.UseAuthorization();
