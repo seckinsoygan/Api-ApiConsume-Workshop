@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
 		public void BookingStatusChangeApproved(Booking booking)
 		{
-			_bookingDal.BookingStatusChangeApproved(booking);
+			//_bookingDal.BookingStatusChangeApproved(booking);
 		}
 
 		public void Delete(Booking entity)

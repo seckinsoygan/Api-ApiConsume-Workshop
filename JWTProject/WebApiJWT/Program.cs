@@ -25,6 +25,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(opt =>
+{
+	opt.AddPolicy("JwtTokenCors", opts =>
+	{
+		opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+	});
+});
 
 var app = builder.Build();
 
@@ -37,8 +44,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors("JwtTokenCors");
 app.UseAuthentication();
-
 app.UseAuthorization();
 
 app.MapControllers();

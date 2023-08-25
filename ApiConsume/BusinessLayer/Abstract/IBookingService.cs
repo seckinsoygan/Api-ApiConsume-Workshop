@@ -5,6 +5,5 @@ namespace BusinessLayer.Abstract
 {
 	public interface IBookingService : IGenericService<Booking>
 	{
-		void BookingStatusChangeApproved(Booking booking);
 	}
 }

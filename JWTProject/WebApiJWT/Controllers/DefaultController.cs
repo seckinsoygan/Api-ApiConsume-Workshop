@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApiJWT.Models;
 
@@ -14,11 +15,18 @@ namespace WebApiJWT.Controllers
 			return Ok(new CreateToken().TokenCreate());
 		}
 
+		[Authorize]
 		[HttpGet("[action]")]
-		[Microsoft.AspNetCore.Authorization.Authorize]
 		public IActionResult Test2()
 		{
 			return Ok("Hoşgeldiniz");
+		}
+
+		[Authorize(Roles = "Admin,Visitor")]
+		[HttpGet("[action]")]
+		public IActionResult Test3()
+		{
+			return Ok("Admin Hoşgeldiniz");
 		}
 	}
 }

@@ -45,11 +45,11 @@ namespace WebAPI.Controllers
 			_bookingService.Update(Booking);
 			return Ok();
 		}
-		[HttpPut("UpdateReservationStatusApproved")]
-		public IActionResult UpdateReservationStatusApproved(Booking booking)
-		{
-			_bookingService.BookingStatusChangeApproved(booking);
-			return Ok();
-		}
+		//[HttpPut("UpdateReservationStatusApproved")]
+		//public IActionResult UpdateReservationStatusApproved(Booking booking)
+		//{
+		//	_bookingService.BookingStatusChangeApproved(booking);
+		//	return Ok();
+		//}
 	}
 }
