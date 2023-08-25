@@ -3,7 +3,8 @@ using EntityLayer.Concrete;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IBookingService : IGenericService<Booking>
-    {
-    }
+	public interface IBookingService : IGenericService<Booking>
+	{
+		void BookingStatusChangeApproved(Booking booking);
+	}
 }
