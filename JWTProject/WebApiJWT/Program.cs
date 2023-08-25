@@ -8,16 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
 {
-	opt.RequireHttpsMetadata = false;
-	opt.TokenValidationParameters = new TokenValidationParameters()
-	{
-		ValidIssuer = "http://localhost",
-		ValidAudience = "http://localhost",
-		IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("aspnetcoreapiapi")),
-		ValidateIssuerSigningKey = true,
-		ValidateLifetime = true,
-		ClockSkew = TimeSpan.Zero
-	};
+    opt.RequireHttpsMetadata = false;
+    opt.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidIssuer = "http://localhost",
+        ValidAudience = "http://localhost",
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("aspnetcoreapiapi")),
+        ValidateIssuerSigningKey = true,
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero
+    };
 });
 
 builder.Services.AddControllers();
@@ -27,10 +27,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(opt =>
 {
-	opt.AddPolicy("JwtTokenCors", opts =>
-	{
-		opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-	});
+    opt.AddPolicy("JwtTokenCors", opts =>
+    {
+        opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
 });
 
 var app = builder.Build();
@@ -38,8 +38,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-	app.UseSwagger();
-	app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();

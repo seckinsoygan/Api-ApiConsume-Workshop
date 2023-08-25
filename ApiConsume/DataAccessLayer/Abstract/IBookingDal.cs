@@ -2,7 +2,7 @@
 
 namespace DataAccessLayer.Abstract
 {
-	public interface IBookingDal : IGenericRepository<Booking>
-	{
-	}
+    public interface IBookingDal : IGenericRepository<Booking>
+    {
+    }
 }
