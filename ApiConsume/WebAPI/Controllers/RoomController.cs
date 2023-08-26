@@ -41,7 +41,7 @@ namespace WebAPI.Controllers
             _roomService.Add(values);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteRoom(int id)
         {
             var room = _roomService.GetById(id);
@@ -49,7 +49,7 @@ namespace WebAPI.Controllers
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateStaff(RoomUpdateDto roomUpdateDto)
+        public IActionResult UpdateRoom(RoomUpdateDto roomUpdateDto)
         {
             if (!ModelState.IsValid)
             {

@@ -1,7 +1,8 @@
-﻿namespace DtoLayer.Dtos.RoomDto
+﻿namespace WebUI.Dtos.RoomDto
 {
-    public class RoomAddDto
+    public class UpdateRoomDto
     {
+        public int RoomId { get; set; }
         public string RoomNumber { get; set; }
         public string RoomImage { get; set; }
         public int Price { get; set; }
